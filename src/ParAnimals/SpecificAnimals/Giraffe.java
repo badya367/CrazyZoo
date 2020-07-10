@@ -14,6 +14,7 @@ public class Giraffe extends Herbivore {
 
     public Giraffe(String name) {
         this.name = name;
+        setWeight(35);
     }
 
     public void display() {

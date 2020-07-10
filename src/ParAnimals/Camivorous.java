@@ -16,7 +16,12 @@ public abstract class Camivorous extends Animal {
 
     final boolean validateFood(Food food) {
         if (food instanceof HerbivoreFood) {
-            System.out.println("Хищник не ест еду для травоядных");
+            try {
+                throw new IllegalAccessException("Хищник не ест еду для травоядных");
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+
             return false;
         }
         return true;

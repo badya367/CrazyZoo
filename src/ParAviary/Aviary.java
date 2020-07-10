@@ -4,11 +4,13 @@ import ParAnimals.Animal;
 import ParFood.Food;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 public abstract class Aviary {
 
     private final Animal[] aviary;
     private int aviaryLength = 0;
+
 
     public Aviary(int animalsCapacity) {
         this.aviary = new Animal[animalsCapacity];
@@ -52,5 +54,23 @@ public abstract class Aviary {
                 Arrays.toString(aviary) +
                 ", aviaryLength=" + aviaryLength +
                 '}';
+    }
+    //--------------------------------------
+    //Сортировка животных в вольерах по весу
+    //--------------------------------------
+    public void sortByWeightAnimal() {
+        Arrays.sort(aviary, 0, aviaryLength, new Comparator<Animal>() {
+            @Override
+            public int compare(Animal o1, Animal o2) {
+                if (o1.getWeight() > o2.getWeight()) {
+                    return -1;
+                }
+                if (o1.getWeight() < o2.getWeight()) {
+                    return 1;
+                }
+                return 0;
+
+            }
+        });
     }
 }

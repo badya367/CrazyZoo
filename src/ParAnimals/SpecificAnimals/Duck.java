@@ -14,6 +14,7 @@ public class Duck extends Herbivore {
 
     public Duck(String name) {
         this.name = name;
+        setWeight(5);
     }
 
     public void display() {

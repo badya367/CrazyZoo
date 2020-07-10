@@ -1,8 +1,9 @@
 package ParAnimals;
 
+import Exceptions.IllegalFoodException;
 import ParFood.CamivorousFood;
 import ParFood.Food;
-import ParFood.HerbivoreFood;
+
 
 public abstract class Herbivore extends Animal {
     @Override
@@ -16,8 +17,7 @@ public abstract class Herbivore extends Animal {
 
     final boolean validateFood(Food food) {
         if (food instanceof CamivorousFood) {
-            System.out.printf("Травоядное не ест еду для хищников %s\n", food.toString());
-            return false;
+            throw new IllegalFoodException("Травоядное не ест еду для хищников");
         }
         return true;
     }
