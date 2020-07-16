@@ -7,7 +7,7 @@ import java.util.UUID;
 
 public abstract class Animal {
     private String id;
-    private int weight = 0;
+    transient private int weight = 0;
 
 
 

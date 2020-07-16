@@ -15,9 +15,7 @@ public class Lion extends Camivorous {
     String name;
 
 
-    public Lion(String name) {
-        this.name = name;
-    }
+    public Lion(String name) {this.name = name; }
 
     public void display() {
         System.out.println("----------------------------");
